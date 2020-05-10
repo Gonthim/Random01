@@ -1,0 +1,39 @@
+// Gradle plugins used to create commands or use certain libraries.
+plugins {
+    
+    // Main java library
+    id 'java-library'
+    
+    // Enables the Gradle.Run task to run the project through gradle and include the dependencies and plugins that gradle has set up
+    id 'application'
+    
+    // OpenJFX specific plugin to include the right OpenJFX version & modules 
+  	id 'org.openjfx.javafxplugin' version '0.0.8'
+}
+
+// The location online to look for plugins and dependency libraries
+
+// Basically anyone can get approval to push new plugins or dependencies to these repositories
+// and then other people can easily include them in gradle build files to use them in their own projects. 
+repositories {
+    // Use jcenter for resolving dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+} 
+
+// Used for external library dependencies
+dependencies {
+
+    // EXAMPLE: JUnit library for unit testing
+    //testImplementation 'junit:junit:4.12'
+}
+
+// This is the JavaFX version & module options used by the 'org.openjfx.javafxplugin' in the plugin section
+// I'm not actually clear why this is it's own plugin and not simply a dependency? I think it's because OpenJFX has different modules.
+javafx {
+    version = "14"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+// The main class that the 'application' plugin will use in the Gradle.Run task
+mainClassName = 'random.Main'
