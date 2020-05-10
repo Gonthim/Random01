@@ -35,10 +35,7 @@ public class Main extends Application {
     
     stage.show();
     
-    // Sprite Test
-    
-    //BufferedImage sprite = ImageIO.read(new File("src/main/resources/pacman.png"));
-    
+    // Sprite Test    
     Image sprite = new Image( getClass().getResource("/pacman.png").toExternalForm() );
     ImageView imageView = new ImageView(sprite);
     group.getChildren().add(imageView);
