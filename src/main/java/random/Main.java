@@ -1,8 +1,15 @@
 package random;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+
+import javax.imageio.ImageIO;
+
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -14,18 +21,28 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
-
-    Group group = new Group(); 
+		
+		// Scene Setup
+    Group group = new Group();
      
-    Scene scene = new Scene(group ,600, 300); 
+    Scene scene = new Scene(group ,600, 300);
     
-    scene.setFill(Color.BROWN);  
+    scene.setFill(Color.BROWN);
     
-    stage.setTitle("Sample Application"); 
+    stage.setTitle("Sample Application");
  
-    stage.setScene(scene); 
-     
-    stage.show(); 
+    stage.setScene(scene);
+    
+    stage.show();
+    
+    // Sprite Test
+    
+    //BufferedImage sprite = ImageIO.read(new File("src/main/resources/pacman.png"));
+    
+    Image sprite = new Image( getClass().getResource("/pacman.png").toExternalForm() );
+    ImageView imageView = new ImageView(sprite);
+    group.getChildren().add(imageView);
+  
 		
 	}
 
