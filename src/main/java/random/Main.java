@@ -1,10 +1,32 @@
 package random;
 
-public class Main {
+import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
-	public static void main(String[] args) {
-		System.out.println("Hello World");
+public class Main extends Application {
 
+	public static void main(String args[]) {
+		launch(args);
+	}
+
+	@Override
+	public void start(Stage stage) throws Exception {
+
+    Group group = new Group(); 
+     
+    Scene scene = new Scene(group ,600, 300); 
+    
+    scene.setFill(Color.BROWN);  
+    
+    stage.setTitle("Sample Application"); 
+ 
+    stage.setScene(scene); 
+     
+    stage.show(); 
+		
 	}
 
 }
