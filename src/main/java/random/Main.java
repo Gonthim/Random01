@@ -1,10 +1,5 @@
 package random;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-
-import javax.imageio.ImageIO;
-
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -40,7 +35,6 @@ public class Main extends Application {
     ImageView imageView = new ImageView(sprite);
     group.getChildren().add(imageView);
   
-		
 	}
 
 }
